@@ -1,17 +1,17 @@
-# # Task 1
-#
-# x = int(input('Введите число: '))
-#
-# if x > 0 and x % 2 == 0:
-#     print('Число положительное и четное')
-# elif x < 0 and x % 2 == 0:
-#     print('Число отрицательное и четное')
-# elif x < 0 and x % 2 != 0:
-#     print('Число отрицательное и нечетное')
-# elif x > 0 and x % 2 != 0:
-#     print('Число положительное и нечетное')
-#
-# Task 2
+# Task 1
+
+x = int(input('Введите число: '))
+
+if x > 0 and x % 2 == 0:
+    print('Число положительное и четное')
+elif x < 0 and x % 2 == 0:
+    print('Число отрицательное и четное')
+elif x < 0 and x % 2 != 0:
+    print('Число отрицательное и нечетное')
+elif x > 0 and x % 2 != 0:
+    print('Число положительное и нечетное')
+
+Task 2
 import random
 
 num = int(input('Введите кол-во символов от 5 до 8 для генерации пароля: '))
@@ -118,6 +118,150 @@ if len(password) < num:
 
 
 print(password)
+
+# Task 3
+import random
+
+gas_price = random.randint(15, 24)
+balance = random.randint(0, 3)
+tx_counter = random.randint(0, 3)
+tx_target = 5
+
+activity = 'Bridge' if gas_price < 20 else 'Swap'
+
+if not balance == '0':
+    withdraw = random.randint(1, 2)
+    balance += withdraw
+    print(f'Баланс нулевой, выведено {withdraw} и добавлено к балансу')
+    print(f'Баланс: {balance}')
+
+if activity == 'Bridge':
+    if balance < 2:
+        withdraw = 2 - balance
+        print(f'Баланса не хватило на {activity}, вывел: {withdraw}')
+        balance += withdraw
+
+    balance -= 2
+    print(f'{activity} стоит 2, сделана транзакция, балансе: {balance}')
+    tx_counter += 1
+    print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+else:
+    balance -= 1
+    print(f'{activity} стоит 1, сделана транзакция, балансе: {balance}')
+    tx_counter += 1
+    print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+# 2ой раз
+if tx_counter < tx_target:
+    if not balance == '0':
+        withdraw = random.randint(1, 2)
+        balance += withdraw
+        print(f'Баланс нулевой, выведено {withdraw} и добавлено к балансу')
+        print(f'Баланс: {balance}')
+
+    gas_price = random.randint(15, 24)
+    activity = 'Bridge' if gas_price < 20 else 'Swap'
+
+    if activity == 'Bridge':
+        if balance < 2:
+            withdraw = 2 - balance
+            print(f'Баланса не хватило на {activity}, вывел: {withdraw}')
+            balance += withdraw
+
+        balance -= 2
+        print(f'{activity} стоит 2, сделана транзакция, балансе: {balance}')
+        tx_counter += 1
+        print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+    else:
+        balance -= 1
+        print(f'{activity} стоит 1, сделана транзакция, балансе: {balance}')
+        tx_counter += 1
+        print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+    # 3й раз
+    if tx_counter < tx_target:
+        if not balance == '0':
+            withdraw = random.randint(1, 2)
+            balance += withdraw
+            print(f'Баланс нулевой, выведено {withdraw} и добавлено к балансу')
+            print(f'Баланс: {balance}')
+
+        gas_price = random.randint(15, 24)
+        activity = 'Bridge' if gas_price < 20 else 'Swap'
+
+        if activity == 'Bridge':
+            if balance < 2:
+                withdraw = 2 - balance
+                print(f'Баланса не хватило на {activity}, вывел: {withdraw}')
+                balance += withdraw
+
+            balance -= 2
+            print(f'{activity} стоит 2, сделана транзакция, балансе: {balance}')
+            tx_counter += 1
+            print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+        else:
+            balance -= 1
+            print(f'{activity} стоит 1, сделана транзакция, балансе: {balance}')
+            tx_counter += 1
+            print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+    # 4й раз
+    if tx_counter < tx_target:
+        if not balance == '0':
+            withdraw = random.randint(1, 2)
+            balance += withdraw
+            print(f'Баланс нулевой, выведено {withdraw} и добавлено к балансу')
+            print(f'Баланс: {balance}')
+
+        gas_price = random.randint(15, 24)
+        activity = 'Bridge' if gas_price < 20 else 'Swap'
+
+        if activity == 'Bridge':
+            if balance < 2:
+                withdraw = 2 - balance
+                print(f'Баланса не хватило на {activity}, вывел: {withdraw}')
+                balance += withdraw
+
+            balance -= 2
+            print(f'{activity} стоит 2, сделана транзакция, балансе: {balance}')
+            tx_counter += 1
+            print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+        else:
+            balance -= 1
+            print(f'{activity} стоит 1, сделана транзакция, балансе: {balance}')
+            tx_counter += 1
+            print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+    # 5 раз
+    if tx_counter < tx_target:
+        if not balance == '0':
+            withdraw = random.randint(1, 2)
+            balance += withdraw
+            print(f'Баланс нулевой, выведено {withdraw} и добавлено к балансу')
+            print(f'Баланс: {balance}')
+
+        gas_price = random.randint(15, 24)
+        activity = 'Bridge' if gas_price < 20 else 'Swap'
+
+        if activity == 'Bridge':
+            if balance < 2:
+                withdraw = 2 - balance
+                print(f'Баланса не хватило на {activity}, вывел: {withdraw}')
+                balance += withdraw
+
+            balance -= 2
+            print(f'{activity} стоит 2, сделана транзакция, балансе: {balance}')
+            tx_counter += 1
+            print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
+
+        else:
+            balance -= 1
+            print(f'{activity} стоит 1, сделана транзакция, балансе: {balance}')
+            tx_counter += 1
+            print(f'Транзакций в кошельке: {tx_counter}, осталось сделать: {tx_target - tx_counter}')
 
 
 
